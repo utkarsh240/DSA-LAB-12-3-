@@ -1,0 +1,41 @@
+/* wap to create an undirected graph using adjacency matrix method .
+*/
+
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    int n,i,j;
+    printf("Enter the number of vertices : ");
+    scanf("%d",&n);
+    int a[n][n];
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<n;j++)
+        {
+            a[i][j]=0;
+        }
+    }
+    int ch;
+    do
+    {
+        printf("Enter the vertices to be connected : ");
+        scanf("%d%d",&i,&j);
+        a[i][j]=1;
+        a[j][i]=1;
+        printf("Do you want to continue (1/0) : ");
+        scanf("%d",&ch);
+    }while(ch==1);
+    printf("The adjacency matrix is : ");
+    for(i=0;i<n;i++)
+    {
+        printf(" ");
+        for(j=0;j<n;j++)
+        {
+            printf("%d ",a[i][j]);
+        }
+        printf(" ");
+    }
+    return 0;
+}
